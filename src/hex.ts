@@ -9,7 +9,8 @@ let speed = 0.03;
 class Hex {
   phaseDelayStart: number;
   constructor(public sketch: p5, public position: p5.Vector, public isRowEven: boolean) {
-    const distanceFromEnd = p5.Vector.dist(this.position, new p5.Vector((window.innerWidth - width * 1.5) / 2, (window.innerHeight - width * 1.5) / 2));
+    // const distanceFromEnd = p5.Vector.dist(this.position, new p5.Vector((window.innerWidth - width * 1.5) / 2, (window.innerHeight - width * 1.5) / 2));
+    const distanceFromEnd = p5.Vector.dist(this.position, new p5.Vector(0, 0));
 
     this.phaseDelayStart = distanceFromEnd / 500;
   }
@@ -55,12 +56,12 @@ export default function (sketch: p5) {
     for (
       let x = width * 1.5;
       x < window.innerWidth - width * 1.5;
-      x += width * 1.5
+      x += width
     ) {
       for (
         let y = width * 1.5;
         y < window.innerHeight - width * 1.5;
-        y += width * 1.5
+        y += width
       ) {
         cubes.push(new Hex(sketch, new p5.Vector(x, y), row % 2 === 0));
       }
