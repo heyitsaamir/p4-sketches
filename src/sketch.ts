@@ -1,4 +1,4 @@
 import p5 from "p5";
-import sketch from './flow'
+import sketch from "./cube";
 
 new p5(sketch);
